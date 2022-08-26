@@ -1,18 +1,17 @@
 const removeFromArray = function(...args) {
 
-    //take first array argument and assign to a variable
-    const arg1 = args.shift();
-
-    //iterate over array argument and match it against the other arguments
-    for (let i = 0; i < arg1.length; i++) {
-        for (let m = 0; m <= args.length; m++) {
-            if (arg1[i] === args[m]) {
-                arg1.splice(i, args.length);
+    const newArray = args.shift();
+    
+    for (let i = newArray.length; i >= 0; i--) {
+        for (let m = 0; m < args.length; m++) {
+            if (newArray[i] === args[m]) {
+                newArray.splice(i, 1);
             }
         }
     }
-    
-    return arg1;
+
+    console.log(newArray.length); //to see my output
+    return newArray;
 };
 
 // Do not edit below this line
